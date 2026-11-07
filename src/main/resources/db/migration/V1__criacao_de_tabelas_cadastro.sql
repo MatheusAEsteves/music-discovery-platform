@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS usuario (
   nome VARCHAR(150) NOT NULL,
   email VARCHAR(150) NOT NULL,
   senha VARCHAR(255) NOT NULL,
-  foto_perfil VARCHAR(255) NOT NULL,
+  foto_perfil VARCHAR(255) NULL,
   bio TEXT NULL,
   tipo ENUM('USER', 'ARTIST') NOT NULL,
   data_criacao DATETIME NOT NULL,
