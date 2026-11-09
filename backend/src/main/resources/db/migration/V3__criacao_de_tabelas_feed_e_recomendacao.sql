@@ -3,7 +3,8 @@ CREATE TABLE IF NOT EXISTS preferencia_usuario (
   usuario_id BINARY(16) NOT NULL,
   genero_id BIGINT NOT NULL,
   pontuacao INT NOT NULL DEFAULT 0,
-  data_atualizacao DATETIME NOT NULL,
+  data_atualizacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    ON UPDATE CURRENT_TIMESTAMP,
 
   PRIMARY KEY (id),
   UNIQUE INDEX usuario_genero_UNIQUE (usuario_id, genero_id),
@@ -23,26 +24,25 @@ CREATE TABLE IF NOT EXISTS preferencia_usuario (
 );
 
 CREATE TABLE IF NOT EXISTS interacao (
-  id BINARY(16) NOT NULL,
-  usuario_id BINARY(16) NOT NULL,
-  post_id BINARY(16) NOT NULL,
-  tipo ENUM('LIKE', 'SAVE', 'PLAY', 'SKIP') NOT NULL,
-  data_interacao DATETIME NOT NULL,
+    usuario_id BINARY(16) NOT NULL,
+    post_id BINARY(16) NOT NULL,
+    curtido BOOLEAN NOT NULL DEFAULT FALSE,
+    salvo BOOLEAN NOT NULL DEFAULT FALSE,
+    pulou BOOLEAN NOT NULL DEFAULT FALSE,
+    segundos_ouvidos INT NOT NULL DEFAULT 0,
+    data_criacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    data_atualizacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    ON UPDATE CURRENT_TIMESTAMP,
 
-  PRIMARY KEY (id),
-  INDEX fk_interacao_usuario_idx (usuario_id),
-  INDEX fk_interacao_post_idx (post_id),
-  INDEX interacao_usuario_post_tipo_idx (usuario_id, post_id, tipo),
+    PRIMARY KEY (usuario_id, post_id),
+    INDEX interacao_post_curtido_idx (post_id, curtido),
+    INDEX interacao_usuario_data_idx (usuario_id, data_atualizacao),
 
-  CONSTRAINT fk_interacao_usuario
-    FOREIGN KEY (usuario_id)
-    REFERENCES usuario (id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    CONSTRAINT fk_interacao_usuario
+    FOREIGN KEY (usuario_id) REFERENCES usuario (id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
 
-  CONSTRAINT fk_interacao_post
-    FOREIGN KEY (post_id)
-    REFERENCES post (id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
+    CONSTRAINT fk_interacao_post
+    FOREIGN KEY (post_id) REFERENCES post (id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+    );
