@@ -1,4 +1,4 @@
-package com.musicdiscovery.platform.usuario;
+package com.nextune.usuario;
 
 public enum RoleUsuario {
     USER,

@@ -1,4 +1,4 @@
-package com.musicdiscovery.platform.genero;
+package com.nextune.genero;
 
 import jakarta.persistence.*;
 

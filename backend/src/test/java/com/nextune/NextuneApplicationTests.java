@@ -1,10 +1,10 @@
-package com.musicdiscovery.platform;
+package com.nextune;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MusicDiscoveryPlatformApplicationTests {
+class NextuneApplicationTests {
 
 	@Test
 	void contextLoads() {

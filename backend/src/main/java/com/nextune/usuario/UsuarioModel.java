@@ -1,4 +1,4 @@
-package com.musicdiscovery.platform.usuario;
+package com.nextune.usuario;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
