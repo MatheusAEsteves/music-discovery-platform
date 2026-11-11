@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -33,7 +34,7 @@ public class PreferenciaUsuarioModel {
     private int pontuacao = 0;
 
     @Column(name = "data_atualizacao", nullable = false, insertable = false, updatable = false)
-    private LocalDateTime dataAtualizacao;
+    private LocalDate dataAtualizacao;
 
     protected PreferenciaUsuarioModel() {}
 
@@ -47,7 +48,7 @@ public class PreferenciaUsuarioModel {
     public UsuarioModel getUsuario() { return usuario; }
     public GeneroModel getGenero() { return genero; }
     public int getPontuacao() { return pontuacao; }
-    public LocalDateTime getDataAtualizacao() { return dataAtualizacao; }
+    public LocalDate getDataAtualizacao() { return dataAtualizacao; }
 
     public void adicionarPontos(int pontos) { this.pontuacao += pontos; }
 }

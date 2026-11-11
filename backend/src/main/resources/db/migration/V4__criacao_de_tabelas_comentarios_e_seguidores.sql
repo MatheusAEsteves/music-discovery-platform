@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS comentario (
   usuario_id BINARY(16) NOT NULL,
   post_id BINARY(16) NOT NULL,
   conteudo TEXT NOT NULL,
-  data_comentario DATETIME NOT NULL,
+  data_comentario DATE NOT NULL,
 
   PRIMARY KEY (id),
   INDEX fk_comentario_usuario_idx (usuario_id),

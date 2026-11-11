@@ -2,6 +2,7 @@ package com.nextune.feed;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -25,10 +26,10 @@ public class InteracaoModel {
     private int segundosOuvidos = 0;
 
     @Column(name = "data_criacao", nullable = false, insertable = false, updatable = false)
-    private LocalDateTime dataCriacao;
+    private LocalDate dataCriacao;
 
     @Column(name = "data_atualizacao", nullable = false, insertable = false, updatable = false)
-    private LocalDateTime dataAtualizacao;
+    private LocalDate dataAtualizacao;
 
     protected InteracaoModel() {}
 
@@ -41,8 +42,8 @@ public class InteracaoModel {
     public boolean isSalvo() { return salvo; }
     public boolean isPulou() { return pulou; }
     public int getSegundosOuvidos() { return segundosOuvidos; }
-    public LocalDateTime getDataCriacao() { return dataCriacao; }
-    public LocalDateTime getDataAtualizacao() { return dataAtualizacao; }
+    public LocalDate getDataCriacao() { return dataCriacao; }
+    public LocalDate getDataAtualizacao() { return dataAtualizacao; }
 
     public void setCurtido(boolean curtido) { this.curtido = curtido; }
     public void setSalvo(boolean salvo) { this.salvo = salvo; }
