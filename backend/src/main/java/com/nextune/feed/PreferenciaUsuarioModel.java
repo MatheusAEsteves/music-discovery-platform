@@ -1,7 +1,7 @@
-package com.musicdiscovery.platform.feed;
+package com.nextune.feed;
 
-import com.musicdiscovery.platform.genero.GeneroModel;
-import com.musicdiscovery.platform.usuario.UsuarioModel;
+import com.nextune.genero.GeneroModel;
+import com.nextune.usuario.UsuarioModel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;

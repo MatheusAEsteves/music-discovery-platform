@@ -1,13 +1,13 @@
-package com.musicdiscovery.platform;
+package com.nextune;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MusicDiscoveryPlatformApplication {
+public class NextuneApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MusicDiscoveryPlatformApplication.class, args);
+		SpringApplication.run(NextuneApplication.class, args);
 	}
 
 }

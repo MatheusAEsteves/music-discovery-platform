@@ -1,7 +1,7 @@
-package com.musicdiscovery.platform.post;
+package com.nextune.post;
 
-import com.musicdiscovery.platform.artista.ArtistaModel;
-import com.musicdiscovery.platform.genero.GeneroModel;
+import com.nextune.artista.ArtistaModel;
+import com.nextune.genero.GeneroModel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;

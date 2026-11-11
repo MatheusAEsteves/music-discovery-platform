@@ -1,4 +1,4 @@
-package com.musicdiscovery.platform.feed;
+package com.nextune.feed;
 
 import jakarta.persistence.*;
 

@@ -1,6 +1,6 @@
-package com.musicdiscovery.platform.artista;
+package com.nextune.artista;
 
-import com.musicdiscovery.platform.usuario.UsuarioModel;
+import com.nextune.usuario.UsuarioModel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
