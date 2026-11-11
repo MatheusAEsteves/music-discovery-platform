@@ -5,9 +5,9 @@ CREATE TABLE IF NOT EXISTS usuario (
   senha VARCHAR(255) NOT NULL,
   foto_perfil VARCHAR(255) NULL,
   bio TEXT NULL,
-  data_criacao DATETIME NOT NULL,
+  data_criacao DATE NOT NULL,
   role ENUM('USER', 'ADMIN') NOT NULL DEFAULT 'USER',
-  enabled TINYINT NOT NULL DEFAULT 1,
+  enabled BOOLEAN NOT NULL DEFAULT TRUE,
   PRIMARY KEY (id),
   UNIQUE INDEX email_UNIQUE (email)
 );

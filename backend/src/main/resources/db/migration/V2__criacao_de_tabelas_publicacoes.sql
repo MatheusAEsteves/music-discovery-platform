@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS post (
   arquivo_audio VARCHAR(255) NOT NULL,
   capa VARCHAR(255) NOT NULL,
   link_musica VARCHAR(255) NOT NULL,
-  data_publicacao DATETIME NOT NULL,
+  data_publicacao DATE NOT NULL,
   artista_id BINARY(16) NOT NULL,
 
   PRIMARY KEY (id),

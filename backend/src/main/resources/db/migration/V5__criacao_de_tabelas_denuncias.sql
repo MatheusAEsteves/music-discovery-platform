@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS denuncia (
   motivo VARCHAR(100) NOT NULL,
   descricao TEXT NULL,
   status ENUM('PENDENTE', 'ANALISADA', 'RESOLVIDA') NOT NULL DEFAULT 'PENDENTE',
-  data_denuncia DATETIME NOT NULL,
+  data_denuncia DATE NOT NULL,
 
   PRIMARY KEY (id),
   INDEX fk_denuncia_usuario_idx (usuario_id),
